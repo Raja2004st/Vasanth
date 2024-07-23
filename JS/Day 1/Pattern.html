@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function pattern1()
+        {
+            let a=document.getElementById("p").value;
+            let result=document.getElementById("result");
+            for(let i=0;i<a;i++)
+        {
+            let v="";
+            for(let j=0;j<=i;j++)
+        {
+                 v+="*"+" ";
+                 
+        }
+        let b=document.createElement("br");
+        let p=document.createElement("p");
+        p=v;
+            result.append(p);
+            result.append(b);;
+        }
+        }
+    </script>
+</head>
+<body>
+    Enter the number <input type="text" id="p" onblur="pattern1()">
+    <div id="result">
+        
+    </div>
+</body>
+</html>

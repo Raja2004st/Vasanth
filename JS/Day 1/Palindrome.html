@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <script>
+        function palin()
+        {
+            let a=document.getElementById("p").value;
+            let t="";
+      //      console.log(a);
+            for(let i=a.length-1;i>=0;i--)
+        {
+                t+=a[i];
+        }
+            if(t===a)
+        {
+                document.getElementById("result").innerHTML="Palindrome";
+               // console.log(t+" "+a);
+        }
+        else
+        {
+           // console.log(t+" "+a);
+            document.getElementById("result").innerHTML="Not Palindrome";
+        }
+           
+
+        }
+    </script>
+</head>
+<body>
+    Enter the number <input type="text" id="p" onblur="palin()">
+    <div id="result">
+
+    </div>
+</body>
+</html>

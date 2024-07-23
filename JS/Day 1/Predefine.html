@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function f1(){
+            var a=document.getElementById("s1").value;
+            let s=document.getElementById("opt").value;
+            let b="";
+            if(s=='length'){
+                b=a.length;
+            }
+            else if(s=='c'){
+                b=a.charAt(0);
+            }
+            else if(s=='sl'){
+                b=a.slice(3,6);
+            }
+            else if(s=='ss'){
+                b=a.substring(3,7);
+            }
+            else if(s=='subs'){
+                b=a.substr(4,8);
+            }
+            else if(s=='u'){
+                b=a.toUpperCase();
+            }
+            else if(s=='lc'){
+                b=a.toLowerCase();
+            }
+            else if(s=='con'){
+                b=a.concat(" ","world");
+            }
+            else if(s=='t'){
+                b=a.trim();
+            }
+            else if(s=='ts'){
+                b=a.trimStart();
+            }
+            else if(s=='te'){
+                b=a.trimEnd();
+            }
+            else if(s=='rt'){
+                b=a.repeat(3);
+            }
+            else if(s=='rp'){
+                b=a.replace("world","universe");
+            }
+            else if(s=='rpa'){
+                b=a.replaceAll("world","universe");
+            }
+            else if(s=='sp'){
+                b=a.split(" ").a[0];
+            }
+            else{
+                b="Wrong input";
+            }
+            document.getElementById("result").innerHTML=b;
+        }
+    </script>
+</head>
+<body>
+    Enter the String <input type="text" id="s1" >
+    <select name="" id="opt">
+        <option value="length">String length</option>
+        <option value="c">String charAt()</option>
+        <option value="sl">String slice()</option>
+        <option value="ss">String substring()</option>
+        <option value="subs">String substr()</option>
+        <option value="u">String toUpperCase()</option>
+        <option value="lc">String toLowerCase()</option>
+        <option value="con">String concat()</option>
+        <option value="t">String trim()</option>
+        <option value="ts">String trimStart()</option>
+        <option value="te">String trimEnd()</option>
+        <option value="rt">String repeat()</option>
+        <option value="rp">String replace()</option>
+        <option value="rpa">String replaceAll()</option>
+        <option value="sp">String split()</option>
+    </select>
+    <br>
+    <button onclick="f1()">Submit</button>
+    <div id="result">
+
+    </div>
+</body>
+</html>

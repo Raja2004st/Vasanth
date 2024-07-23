@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSFunction</title>
+    <script>
+        function myFunction()
+        {
+            document.write("<br> JS Function define");
+        }
+        function add(a ,b)
+        {
+            let c=a+b;
+            alert("Add :"+c);
+        }
+        function sub(a,b)
+        {
+            let c=a-b;
+            alert("Sub :"+c);
+        }
+        function welcome()
+        {
+            alert("Welcome this web page");
+        }
+        function greet()
+        {
+            let name=prompt("Enter the name");
+            alert("Welcome  "+name);
+        }
+        function leave()
+        {
+            confirm("Do u want leave this page...");
+        }
+    </script>
+</head>
+<body onload="welcome()" onunload="leave()">
+     <button onclick="myFunction()">Click</button>
+     <button onclick="add(10,2)">Add</button>
+     <button onclick="sub(45,14)">Sub</button>
+     <button onclick="greet()">Say Welcome</button>
+   
+</body>
+</html>
