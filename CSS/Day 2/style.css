@@ -1,0 +1,62 @@
+.main-container
+{
+height: 100vh;
+display: flex;
+align-items:center ;
+justify-content: center;
+background-image: url(jr-korpa-g0pZ4zMZw7c-unsplash.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+.main-login
+{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border: 1px solid;
+    padding:  0 3vw 0 3vw;
+ /* From https://css.glass */
+background: rgba(248, 239, 239, 0.31);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3px);
+-webkit-backdrop-filter: blur(3px);
+border: 1px solid rgba(248, 239, 239, 0.25);
+}
+img
+{
+   
+   border-radius: 50%;
+   /* border: 1px solid; */
+    width: 20vh;
+    margin-left: 5vw;
+}
+h3
+{
+    color: white;
+    padding-left: 30px;
+    margin-left: 4vw;
+}
+input
+{
+    margin: 10px;
+    border-radius: 10px 0 10px 0;
+    padding: 10px;
+}
+button
+{
+    margin: 3vh;
+    padding: 7px;
+}
+button:hover{
+    background-color: green;
+    color: white;
+}
+a{
+    color: white;
+}
+.term
+{
+    margin-left: 2%;
+   color: white;
+}

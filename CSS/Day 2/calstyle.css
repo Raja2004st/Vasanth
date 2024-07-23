@@ -1,0 +1,40 @@
+.main-container
+{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-calc
+{ 
+    width: 33vw;
+    height: 47vh;
+    padding: 20px;
+    background-color: rgb(186, 209, 209);
+    border-radius: 10px;
+    
+}
+input
+{ 
+    width: 8vw;
+    height: 7vh;
+    padding-left: 1vw;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.row-1
+{
+    margin-top: 5px;
+}
+.ans input
+{
+     width: 31.5vw;
+     margin-bottom: 10px;
+}
+input:hover
+{
+    cursor: pointer;
+    color: black;
+}
