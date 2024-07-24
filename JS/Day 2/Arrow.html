@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sum =() =>
+    {
+            let a=document.getElementById("n1").value;
+            let result="<table border='1' width='50%>";
+                result+="<tr> <th> <b> Number </b> </th> <th> <b> Factorial </b> </th> </tr>";
+                
+                for(let i=1;i<=a;i++)
+            {
+                let fact =1;
+                for(let j=1;j<=i;j++)
+            {
+                fact*=j;
+            }
+             
+                 result+="<tr> <th> i</th> <th> fact </th> </tr>";
+            }
+            result+="</table>";
+    }
+        document.getElementById("result").innerHTML=result;
+
+    </script>
+    Enter the number <input type="text" id="n1" onblur="sum()">
+    <div id="result">
+
+    </div>
+</body>
+</html>

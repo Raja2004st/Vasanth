@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+    .main-container
+{
+    height: 100vh;
+    display: flex;
+ /* From https://css.glass */
+background: rgba(115, 192, 150, 0.4);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(12.1px);
+-webkit-backdrop-filter: blur(12.1px);
+border: 1px solid rgba(115, 192, 150, 0.1);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-calc
+{ 
+    padding-top: 30px;
+   width: 28vw;
+  height: 52vh ;
+  padding-left: 18px;
+  padding-right: 15px;
+   background-color: rgb(73, 78, 78);
+   border-radius: 30px;
+    
+}
+input
+{ 
+    width: 6.5vw;
+    height: 7vh;
+    padding-left: 1vw;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(151, 151, 151);
+    color: white;
+    box-shadow: 10px black;
+   
+}
+.row-1
+{
+    margin-top: 5px;
+    color: black ;
+}
+.ans
+{
+    margin-bottom: 25px;
+}
+.ans input
+{
+     width: 25.5vw;
+     margin-bottom: 10px;
+}
+input:hover
+{
+    cursor: pointer;
+    color: black;
+}
+input:active
+{
+    background-color: rgb(252, 252, 252);
+    color: black;
+}
+.color
+{
+    background-color: rgb(207, 161, 34);
+    color: white;
+}  
+
+.color1
+{
+    color: black;
+}
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="main-calc">
+        <div class="ans">
+            <input type="text" name="d" class="inp" placeholder="0" style="text-align: right; font-size: 2vw; ">
+        </div>
+        <div class="row-1">
+            <input class="color" type="button" value="C" id="C" onclick="clc()">
+           <input class="color" type="button" value="%" id="%" onclick="calc('%')">
+            <input class="color" type="button" value="<=" id="<=" onclick="cl()">
+            <input class="color" type="button" value="/" id="/" onclick="calc('/')">    
+        </div>
+        <div class="row-1">
+
+                <input  type="button" value="7" onclick="calc(7)" >
+               <input type="button" value="8" onclick="calc(8)">
+                <input type="button" value="9" onclick="calc(9)">
+                <input class="color" type="button" value="*" onclick="calc('*')">
+            </div>
+            <div class="row-1">
+                <input type="button" value="4" onclick="calc(4)">
+                <input type="button" value="5" onclick="calc(5)">
+                 <input type="button" value="6" onclick="calc(6)">
+                 <input class="color" type="button" value="-" onclick="calc('-')">
+            </div>
+            <div class="row-1" >
+                <input type="button" value="1" onclick="calc(1)">
+                <input type="button" value="2" onclick="calc(2)">
+                 <input type="button" value="3" onclick="calc(3)">
+                 <input class="color" type="button" value="+" onclick="calc('+')">
+            </div>
+            <div class="row-1">
+                <input type="button" value="00" onclick="calc('00')">
+                <input type="button" value="0" onclick="calc(0)">
+                 <input type="button" value="." onclick="calc('.')">
+                 <input class="color" type="button" value="="  onclick="cal()">
+            </div>
+        </div>
+        </div>
+
+    <script>
+            var a=document.querySelector('.inp');
+        function calc(n){
+         
+            //  a.value=""
+            a.value+=n;
+           // document.
+              
+        }
+ function cal()
+ {
+
+    if(a.value=="")
+        {
+            a.value="";
+        }
+        else 
+        {
+            let t=a.value;
+       a.value=eval(a.value);
+       if(t.value==a.value)
+       {
+        a.value="Syntax error";
+       }
+        }
+        
+ }
+        function clc()
+        {
+         a.value="";
+        }
+        function cl()
+        { 
+            
+            a.value=(a.value).substring(0,a.value.length-1);
+        
+            
+        }
+    </script>
+</body>
+</html>
