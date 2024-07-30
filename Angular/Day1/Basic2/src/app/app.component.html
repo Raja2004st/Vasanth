@@ -1,0 +1,21 @@
+<div class="head1" >
+
+  <div class="main-head">
+ <h2 [ngClass]="myclass">  Employee Management System</h2> 
+</div>
+ <button (click)="change()">Show </button>
+ <div *ngIf="flag" [ngStyle]="style">
+    <ul>
+      <li *ngFor="let v of arr" (click)="select(v)">{{v}}</li>
+    </ul>
+    <br>
+    <h2>You are select : {{select1 }}</h2>
+    <div [ngSwitch]="select1">
+      <font color="black" *ngSwitchCase="'Raja'">Java</font>
+      <font color="green" *ngSwitchCase="'Karthi'"> Java Full statck</font>
+      <font color="green" *ngSwitchCase="'Suje'">Flutter</font>
+      <font color="green" *ngSwitchDefault >Invalid</font>
+ 
+    </div>
+    <button (click)="changestyle()">Style</button>
+ </div>
