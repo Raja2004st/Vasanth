@@ -1,0 +1,30 @@
+<div class="head1">
+  <h2>Expensive Management System</h2>
+</div>
+<div class="">
+  <div class="">
+        <div *ngIf="flag">
+           Enter the AC name :<input type="text"  [(ngModel)]="name">
+         
+           Enter the Per Rate : <input type="text"  [(ngModel)]="rate">
+         
+           Enter the Count: <input type="text"  [(ngModel)]="number">
+          </div>
+           <div *ngIf="show">
+            Enter the AC name :<input type="text"  [(ngModel)]="cname">
+            Enter the Count: <input type="text"  [(ngModel)]="num">
+            <button (click)="con()">Confirm</button>
+           </div>
+           <h1>{{name}} {{rate}}</h1>
+           <div class="">
+            <button (click)="save() "> Save</button>
+            <button (click)="update()">Update</button>
+            <button>Delete</button>
+           </div>
+  </div>
+  <div class="">
+        
+            <ul *ngFor="let v of a" ><li>{{v}}</li>
+           </ul>
+  </div>
+</div>

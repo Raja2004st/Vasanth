@@ -1,0 +1,19 @@
+*
+{
+    margin: 20px;
+}
+.head1
+{
+    height: 10vh;    
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.main
+{
+    
+}
