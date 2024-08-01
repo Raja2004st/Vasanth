@@ -55,7 +55,7 @@ export class AppComponent {
         {
           let split=this.a[i].split("-");
            if(split[0]===this.cname){
-            this.a[i]=this.cname+"-"+split[1]+"-"+this.num;
+            this.a[i]=this.cname+"-"+split[1]+"-"+this.num;   
            }
           
         }
