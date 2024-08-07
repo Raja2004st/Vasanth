@@ -7,10 +7,5 @@ import { CalculateService } from '../calculate.service';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-   sum:number;
-   constructor(private calc:CalculateService)
-   {
-    this.sum=calc.getAddition(30,29);
-    
-   }
+  
 }

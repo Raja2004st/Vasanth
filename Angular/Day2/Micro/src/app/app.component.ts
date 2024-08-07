@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { CalculateService } from './calculate.service';
+import { stock } from './model/stock';
 
 @Component({
   selector: 'app-root',
@@ -9,57 +10,51 @@ import { CalculateService } from './calculate.service';
 })
 export class AppComponent {
   title = 'Micro';
-  name:string;
-  rate:string;
-  number:string;
-  a:string[];
-  b:string;
-  flag:boolean;
-  show:boolean;
-  cname:string;
-  num:string;
+Arr:stock[];
+ st:stock;
+   result:string;
+   flag:boolean=false;
+    constructor(private service:CalculateService)
+    {
+        this.st=new stock(); 
+        this.result="";
+        this.Arr=[];
   
-  // constructor(private clac:CalculateService) 
-  // {
-  //   this.sum=clac.getAddition(10,20);
-  // }
-   constructor()
-   {
-    this.name="";
-    this.rate=""; 
-    this.number="";
-    this.a=[];
-    this.b="";
-    this.flag=true;
-    this.show=false;      
-    this.cname="";
-    this.num="";
-   }
-   save()
-   {
-    this.b=""; 
-     this.b+=this.name+"-";
-     this.b+=this.rate+"-";
-     this.b+=this.number+"";
-     this.a.push(this.b);
-   
-   }
-   update()
-   {
-         this.flag=!this.flag;
-         this.show=!this.flag;
-   }
-   con()
-   {
-        for(let i=0;i<this.a.length;i++)
-        {
-          let split=this.a[i].split("-");
-           if(split[0]===this.cname){
-            this.a[i]=this.cname+"-"+split[1]+"-"+this.num;   
-           }
-          
-        }
         
+    }
+    insertstock(data:any)
+    {
+      this.st.id=data.Id;
+      this.st.rate=data.rate;
+      this.st.count=data.count;
+      //alert(data.empId+" "+data.empName+" "+data.empSalary);
+     this.result=this.service.insertstock(this.st);
+    }
+    updatestock(data:any)
+    {
+      this.st.id=data.Id;
+      this.st.rate=data.rate;
+      this.st.count=data.count;
+      //alert(data.empId+" "+data.empName+" "+data.empSalary);
+     this.result=this.service.updatestock(this.st);
+    }
+    deletestock(data:any)
+    {
       
-   }
-}
+     this.result=this.service.deletestock(data.Id);
+    }
+    findstock(data:any)
+    {
+      
+     this.st=this.service.findstock(data.Id);
+     this.result=this.st.id+" "+this.st.rate+" "+this.st.count;
+     
+    }
+    findallstock(data:any)
+    {
+      
+     this.Arr=this.service.findallstock();
+    this.flag=true;
+     
+    }
+  }
