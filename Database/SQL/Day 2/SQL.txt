@@ -1,0 +1,43 @@
+select * from employeer where id in(33,43,83)and city='Chennai'
+select * from employeer where id in(33,43,83) or city='Chennai';
+insert into employeer (id,city) values(87,'Karur');
+select * from employeer  where name is null;
+select * from employeer  where name is not null;
+
+
+select * from employeer where name like 'R%';
+
+select * from employeer where name like '_a%';
+select * from employeer where name like '%i';
+select * from employeer where name like '%a%'
+select * from employeer where name not like '%S%';;
+select * from employeer order by name desc;
+select * from employeer order by city desc;
+select * from employeer order by name ;
+select * from employeer order by id ;
+alter table employeer add salary number;
+update employeer set salary =50000 where id=43;
+update employeer set salary =90000 where id in (83,87);
+
+alter table employeer drop column salary;
+alter table employeer modify city varchar(30);
+
+alter table employeer rename column city to Rural;
+rename employeer to Employ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

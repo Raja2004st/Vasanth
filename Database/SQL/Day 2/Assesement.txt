@@ -1,0 +1,219 @@
+1.  Retrieve all columns from the Sales table.
+
+create table Sales_table (sale_id number(5), product_id number(5), quantity_sold number(3), sale_date date, total_price number(10));
+select * from Sales_table;
+
+  SALE_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         1        101             5 01-JAN-24        2500
+         2        102             3 02-JAN-24         900
+         3        103             2 02-JAN-24          60
+         4        104             4 03-JAN-24          80
+         5        105             6 03-JAN-24          90
+
+
+2. Retrieve sale_id and quantity_sold from sales table.
+
+ select sale_id,quantity_sold from Sales_table;
+
+  SALE_ID QUANTITY_SOLD
+---------- -------------
+         1             5
+         2             3
+         3             2
+         4             4
+         5             6
+
+3. Retrieve the sale_id and sale_date from the Sales table.
+  
+ select sale_id,sale_date from Sales_table;
+
+  SALE_ID SALE_DATE
+---------- ---------
+         1 01-JAN-24
+         2 02-JAN-24
+         3 02-JAN-24
+         4 03-JAN-24
+         5 01-MAR-24
+4.Filter the Sales table to show only sales with a total_price greater than $100.'
+
+select * from Sales_table where total_price>100;
+
+   SALE_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         1        101             5 01-JAN-24        2500
+         2        102             3 02-JAN-24         900
+
+5.Retrieve the sale_id and total_price from the Sales table for sales made on January 3, 2024.
+
+ select sale_id , total_price from Sales_table where sale_date='03-Jan-2024';
+
+   SALE_ID TOTAL_PRICE
+---------- -----------
+         4          80
+         5          90
+
+6.Retrieve the sale_id, product_id, and total_price from the Sales table for sales with a quantity_sold greater than 4.
+
+select sale_id ,product_id, total_price from Sales_table where quantity_sold>4;
+
+   SALE_ID PRODUCT_ID TOTAL_PRICE
+---------- ---------- -----------
+         1        101        2500
+         5        105          90
+
+7.. Retrieve all columns from the Sales table those sale_id are 1, 3 & 5.
+     
+select *from Sales_table where sale_id in (1,3,5);
+
+   SALE_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         1        101             5 01-JAN-24        2500
+         3        103             2 02-JAN-24          60
+         5        105             6 03-JAN-24          90
+8. Retrieve all columns from the Sales table those total_price between 90 and 1000.
+
+
+SQL> select *from Sales_table where total_price between 90 and 1000;
+
+   SALE_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         2        102             3 02-JAN-24         900
+         5        105             6 03-JAN-24          90
+
+9.Retrieve all columns from the Sales table those total_price not between 90 and 1000.
+
+ select *from Sales_table where total_price not  between 90 and 1000;
+
+   SALE_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         1        101             5 01-JAN-24        2500
+         3        103             2 02-JAN-24          60
+         4        104             4 03-JAN-24          80
+
+10.Retrieve all columns from the Sales table those sale_id are not in 1, 3 & 5.
+
+select *from Sales_table where sale_id not in (1,3,5);
+
+   SALE_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         2        102             3 02-JAN-24         900
+         4        104             4 03-JAN-24          80
+
+11.Update total_price as 500 in  the Sales table those sale_id are 1, 3 & 5.
+
+update Sales_table set total_price=500 where sale_id in (1,3,5);
+
+3 rows updated.
+
+SQL> select *from Sales_table;
+
+   SALE_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         1        101             5 01-JAN-24         500
+         2        102             3 02-JAN-24         900
+         3        103             2 02-JAN-24         500
+         4        104             4 03-JAN-24          80
+         5        105             6 03-JAN-24         500
+
+
+12.delete from the Sales table those total_price not between 90 and 1000.
+
+ delete  from Sales_table where total_price not between 90 and 1000;
+
+1 row deleted.
+
+SQL> select *from Sales_table;
+
+   SALE_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         1        101             5 01-JAN-24         500
+         2        102             3 02-JAN-24         900
+         3        103             2 02-JAN-24         500
+         5        105             6 03-JAN-24         500
+
+13.Sort all the records using sale_id column in ascending order. 
+
+select *from Sales_table order by sale_id;
+
+   SALE_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         1        101             5 01-JAN-24         500
+         2        102             3 02-JAN-24         900
+         3        103             2 02-JAN-24         500
+         5        105             6 03-JAN-24         500
+
+14.Sort all the records using sale_id column in descending order.
+
+elect *from Sales_table order by sale_id desc;
+
+   SALE_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         5        105             6 03-JAN-24         500
+         3        103             2 02-JAN-24         500
+         2        102             3 02-JAN-24         900
+         1        101             5 01-JAN-24         500
+
+15.. Rename the sale_id column as sales_id;
+
+
+SQL> alter table Sales_table rename column sale_id to sales_id;
+
+Table altered.
+
+SQL> select *from Sales_table;
+
+  SALES_ID PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ---------- ------------- --------- -----------
+         1        101             5 01-JAN-24         500
+         2        102             3 02-JAN-24         900
+         3        103             2 02-JAN-24         500
+         5        105             6 03-JAN-24         500
+
+16.Drop the column sales_id.
+
+alter table Sales_table drop column sales_id;
+
+Table altered.
+
+SQL> select *from Sales_table;
+
+PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ------------- --------- -----------
+       101             5 01-JAN-24         500
+       102             3 02-JAN-24         900
+       103             2 02-JAN-24         500
+       105             6 03-JAN-24         500
+
+17.Rename the table as tbl_sales.
+
+ rename Sales_table to tbl_sales;
+
+Table renamed.
+
+SQL> select *from Sales_table;
+select *from Sales_table
+             *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select *from tbl_sales;
+
+PRODUCT_ID QUANTITY_SOLD SALE_DATE TOTAL_PRICE
+---------- ------------- --------- -----------
+       101             5 01-JAN-24         500
+       102             3 02-JAN-24         900
+       103             2 02-JAN-24         500
+       105             6 03-JAN-24         500
+
+18.Drop the table.
+
+ delete from tbl_sales;
+
+4 rows deleted.
+
+SQL> select *from tbl_sales;
+
+no rows selected
+
